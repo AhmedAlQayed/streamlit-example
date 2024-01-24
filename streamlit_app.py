@@ -1,19 +1,29 @@
 import streamlit as st
 from openai import OpenAI
+from openai import OpenAI
 
 # Initialize the OpenAI client with your API key
 client = OpenAI(api_key=st.secrets["openai_api_key"])
-
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 # Function to communicate with ChatGPT
 def chat_with_gpt(prompt):
     # Create a chat completion
     response = client.chat.completions.create(
+        model="ft:gpt-3.5-turbo-1106:personal::8kcDNcCL",
         messages=[
             {"role": "system", "content": "You assist in generating DeepMIMO config parameters based on user input"},
             {"role": "user", "content": prompt}
         ],
-        temperature=0,
-        model="ft:gpt-3.5-turbo-1106:personal::8iikVOli",
+        temperature=1,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
     )
     return response.choices[0].message.content.strip()
 
@@ -124,8 +134,8 @@ change_label_style(label, '20px')
 
 # Send query to the chatbot
 if st.button("Generate Config Parameters!"):
-    recipe_response = chat_with_gpt(prompt)
-    st.text_area("DeepMIMO Configuration Parameters", recipe_response, height=300)
+    chat_response = chat_with_gpt(prompt)
+    st.text_area("DeepMIMO Configuration Parameters", chat_response, height=300)
 
 # Display images at the bottom with appropriate scaling
 col1, col2 = st.columns([1, 1])

@@ -6,12 +6,12 @@ import openai
 def chat_with_gpt(prompt):
     openai.api_key = "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"
     response = openai.Completion.create(
-        engine="text-babbage-001",
+        engine="gpt-4-1106-preview",
         prompt=prompt,
-        max_tokens=1000,
+        max_tokens=4000,
         n=1,
         stop=None,
-        temperature=0.5,
+        temperature=0.7,
     )
 
     return response.choices[0].text.strip()

@@ -119,7 +119,7 @@ parameters['OFDM']['subcarriers']
 parameters['OFDM']['subcarriers_limit']
 parameters['OFDM']['subcarriers_sampling']
 parameters['OFDM']['bandwidth'] 
-parameters['OFDM']['RX_filter'] . SELECT ONLY THE RELEVANT PARAMETERS from the following scenario: {ingredients} DO NOT SHOW ALL PARAMETERS. ONLY the relevant ones."""
+parameters['OFDM']['RX_filter']. SELECT ONLY THE RELEVANT PARAMETERS from the following scenario: {ingredients} DO NOT SHOW ALL PARAMETERS. ONLY the relevant ones. WHen ASKED RANDOM PARAMETERS, YOU HAVE TO GIVE A number"""
 change_label_style(label, '20px')
 
 # Send query to the chatbot

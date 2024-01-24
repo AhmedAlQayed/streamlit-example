@@ -85,7 +85,7 @@ prompt = f"{ingredients}"
 recipe_response = ""
 
 # Send query to the chatbot
-if st.button("Generate the channel matrix!"):
+if st.button("Generate Config Parameters!"):
     recipe_response = chat_with_gpt(prompt)
 
     # Split the response into lines and find the recipe name
@@ -101,5 +101,5 @@ if st.button("Generate the channel matrix!"):
         st.markdown(ingredients_and_steps)
 
         # Add a box to display the entire response
-    st.text_area("Generated Recipe", recipe_response, height=300)
+    st.text_area("DeepMIMO Configuration Parameters", recipe_response, height=300)
 

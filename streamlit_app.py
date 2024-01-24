@@ -19,7 +19,7 @@ def chat_with_gpt(prompt):
     return response.choices[0].message.content.strip()
 
 # Display the images
-st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true", use_column_width=2)
+st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true", use_column_width=0.5)
 
 
 # Streamlit app
@@ -111,6 +111,6 @@ if st.button("Generate Config Parameters!"):
 # Use columns to display images at the bottom left and right
 col1, col2 = st.columns(2)
 with col1:
-    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/O1_bird.png?raw=true", use_column_width=1)
+    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/O1_bird.png?raw=true", use_column_width=5)
 with col2:
-    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/O1_topV2.png?raw=true", use_column_width=1)
+    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/O1_topV2.png?raw=true", use_column_width=5)

@@ -90,7 +90,35 @@ def change_label_style(label, font_size='12px', font_color='black', font_family=
 # User input
 label = "Enter your network/communication system scenario:"
 ingredients = st.text_input(label)
-prompt = f""" {ingredients} """
+prompt = f"""Make sure to only consider the following set of parameters.
+parameters['dynamic_settings'] 
+parameters['OFDM']
+parameters['active_BS'] 
+parameters['bs_antenna'] 
+parameters['ue_antenna'] 
+parameters['dynamic_settings']['first_scene']
+parameters['dynamic_settings']['last_scene']
+parameters['num_paths'] 
+parameters['active_BS'] 
+parameters['user_row_first']
+parameters['user_row_last'] 
+parameters['row_subsampling']
+parameters['user_subsampling'] 
+parameters['bs_antenna']['shape'] 
+parameters['bs_antenna']['spacing'] 
+parameters['bs_antenna']['rotation'] 
+parameters['bs_antenna']['radiation_pattern']
+parameters['ue_antenna']['shape']
+parameters['ue_antenna']['spacing']
+parameters['ue_antenna']['rotation'] 
+parameters['ue_antenna']['radiation_pattern']
+parameters['enable_BS2BS'] 
+parameters['OFDM_channels']
+parameters['OFDM']['subcarriers'] 
+parameters['OFDM']['subcarriers_limit']
+parameters['OFDM']['subcarriers_sampling']
+parameters['OFDM']['bandwidth'] 
+parameters['OFDM']['RX_filter'] . SELECT ONLY THE RELEVANT PARAMETERS from the following scenario: {ingredients} DO NOT SHOW ALL PARAMETERS. ONLY the relevant ones."""
 change_label_style(label, '20px')
 
 # Send query to the chatbot

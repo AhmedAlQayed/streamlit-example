@@ -14,7 +14,7 @@ def chat_with_gpt(prompt):
             {"role": "system", "content": "You assist in generating DeepMIMO config parameters based on user input"},
             {"role": "user", "content": prompt}
         ],
-        temperature=1,
+        temperature=0,
         max_tokens=256,
         top_p=1,
         frequency_penalty=0,

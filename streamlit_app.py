@@ -19,7 +19,7 @@ def chat_with_gpt(prompt):
     return response.choices[0].message.content.strip()
 
 # Display the images
-st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true", use_column_width=40)
+st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true", use_column_width=10)
 
 
 # Streamlit app

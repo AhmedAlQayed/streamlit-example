@@ -76,27 +76,15 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.title("Recipe Maker Chatbot")
+st.title("AutoDeepMIMO")
 
-# Choose input type
-with st.sidebar:
-    st.header("Instructions")
-    st.write(
-        "Please choose an input type below and provide the corresponding input in the provided text field. Then click 'Cook me a meal!' to generate your recipe.")
-    input_type = st.selectbox("Choose input type:", ["Ingredients", "Recipe Name"])
-
-# Get user input
-if input_type == "Ingredients":
-    ingredients = st.text_input("Enter ingredients separated by commas:")
-    prompt = f"Create a recipe using the following ingredients: {ingredients}. Provide a recipe name, ingredients and detailed steps. Add calories for the recipe as well"
-else:
-    recipe_name = st.text_input("Enter the recipe name:")
-    prompt = f"Provide ingredients and detailed steps for the following recipe: {recipe_name}.Add calories for the recipe as well."
+ingredients = st.text_input("Enter ingredients separated by commas:")
+prompt = f"Create a recipe using the following ingredients: {ingredients}. Provide a recipe name, ingredients and detailed steps. Add calories for the recipe as well"
 
 recipe_response = ""
 
 # Send query to the chatbot
-if st.button("Cook me a meal!"):
+if st.button("Generate the channel matrix!"):
     recipe_response = chat_with_gpt(prompt)
 
     # Split the response into lines and find the recipe name

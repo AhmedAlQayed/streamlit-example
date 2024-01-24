@@ -1,20 +1,20 @@
 import streamlit as st
 import openai
 
+# Initialize the OpenAI client with your API key
+openai.api_key = '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'
 
 # Function to communicate with ChatGPT
 def chat_with_gpt(prompt):
-    openai.api_key = "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"
-    response = openai.Completion.create(
-        engine="gpt-4-1106-preview",
-        prompt=prompt,
-        max_tokens=4000,
-        n=1,
-        stop=None,
-        temperature=0.7,
+    response = openai.ChatCompletion.create(
+        model="gpt-4-1106-preview",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt}
+        ]
     )
 
-    return response.choices[0].text.strip()
+    return response.choices[0].message['content'].strip()
 
 
 # Streamlit app

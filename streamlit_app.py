@@ -20,9 +20,10 @@ def chat_with_gpt(prompt):
 st.set_page_config(page_title="AutoDeepMIMO", page_icon="https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true")
 st.title("AutoDeepMIMO")
 
-# Add logo to the sidebar or header
-st.sidebar.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true", width=150)
-
+st.markdown(
+    "<img src='https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true' style='max-width:150px; max-height:150px; position:absolute; top:10px; left:10px; border-radius:15px;'>",
+    unsafe_allow_html=True,
+)
 # Custom styles for the page
 st.markdown("""
     <style>

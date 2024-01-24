@@ -95,29 +95,24 @@ parameters['dynamic_settings']
 parameters['OFDM']
 parameters['bs_antenna'] 
 parameters['ue_antenna'] 
-parameters['dynamic_settings']['first_scene'] = 1
-parameters['dynamic_settings']['last_scene'] = 1
-
-parameters['num_paths'] = 5
-parameters['active_BS'] = np.array([1])
-parameters['user_row_first'] = 1
-parameters['user_row_last'] = 1
-parameters['row_subsampling'] = 1
-parameters['user_subsampling'] = 1
-
-parameters['bs_antenna']['shape'] = np.array([1, 8, 4])
-parameters['bs_antenna']['spacing'] = 0.5
-parameters['bs_antenna']['rotation'] = np.array([0, 0, 0])
-parameters['bs_antenna']['radiation_pattern'] = 'isotropic'
-
-parameters['ue_antenna']['shape'] = np.array([1, 4, 2])
-parameters['ue_antenna']['spacing'] = 0.5
-parameters['ue_antenna']['rotation'] = np.array([0, 0, 0])
-parameters['ue_antenna']['radiation_pattern'] = 'isotropic'
-
-parameters['enable_BS2BS'] = 1
-
-parameters['OFDM_channels'] = 1 # Frequency (OFDM) or time domain channels
+parameters['dynamic_settings']['first_scene']
+parameters['dynamic_settings']['last_scene']
+parameters['num_paths'] 
+parameters['active_BS'] 
+parameters['user_row_first']
+parameters['user_row_last'] 
+parameters['row_subsampling']
+parameters['user_subsampling'] 
+parameters['bs_antenna']['shape'] 
+parameters['bs_antenna']['spacing'] 
+parameters['bs_antenna']['rotation'] 
+parameters['bs_antenna']['radiation_pattern']
+parameters['ue_antenna']['shape']
+parameters['ue_antenna']['spacing']
+parameters['ue_antenna']['rotation'] 
+parameters['ue_antenna']['radiation_pattern']
+parameters['enable_BS2BS'] 
+parameters['OFDM_channels']
 parameters['OFDM']['subcarriers'] 
 parameters['OFDM']['subcarriers_limit']
 parameters['OFDM']['subcarriers_sampling']

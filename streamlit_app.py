@@ -21,7 +21,15 @@ st.set_page_config(page_title="AutoDeepMIMO", page_icon="https://github.com/Ahme
 st.title("AutoDeepMIMO")
 
 st.markdown(
-    "<img src='https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true' style='max-width:150px; max-height:150px; position:absolute; top:10px; left:10px; border-radius:15px;'>",
+    """
+    <style>
+        /* Add some top padding to the main content to avoid overlapping with the logo */
+        .reportview-container .main .block-container {
+            padding-top: 5rem;
+        }
+    </style>
+    <img src='https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true' style='max-width:150px; position:absolute; top:1rem; left:1rem; border-radius:15px;'>
+    """,
     unsafe_allow_html=True,
 )
 # Custom styles for the page

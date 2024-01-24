@@ -19,14 +19,8 @@ def chat_with_gpt(prompt):
     return response.choices[0].message.content.strip()
 
 # Display the images
-st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/6305c3a82e2d5b9d4e0b8b80d0bff725f945a145/logo.png", use_column_width=True)
+st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/logo.png?raw=true", use_column_width=True)
 
-# Use columns to display images at the bottom left and right
-col1, col2 = st.columns(2)
-with col1:
-    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/6305c3a82e2d5b9d4e0b8b80d0bff725f945a145/O1_bird.png", use_column_width=True)
-with col2:
-    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/6305c3a82e2d5b9d4e0b8b80d0bff725f945a145/O1_topV2.png", use_column_width=True)
 
 # Streamlit app
 st.markdown(
@@ -114,3 +108,9 @@ if st.button("Generate Config Parameters!"):
         # Add a box to display the entire response
     st.text_area("DeepMIMO Configuration Parameters", recipe_response, height=300)
 
+# Use columns to display images at the bottom left and right
+col1, col2 = st.columns(2)
+with col1:
+    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/O1_bird.png?raw=true", use_column_width=True)
+with col2:
+    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/master/O1_topV2.png?raw=true", use_column_width=True)

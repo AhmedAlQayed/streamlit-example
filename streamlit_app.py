@@ -13,7 +13,7 @@ def chat_with_gpt(prompt):
         model="gpt-4-1106-preview",
     )
 
-    return response.choices[0].message['content'].strip()
+    return response.choices[0].message.content.strip()
 
 
 # Streamlit app

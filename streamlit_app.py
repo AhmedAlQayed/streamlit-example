@@ -90,7 +90,7 @@ def change_label_style(label, font_size='12px', font_color='black', font_family=
 # User input
 label = "Enter your network/communication system scenario:"
 ingredients = st.text_input(label)
-prompt = f"""Make sure to only consider the following set of parameters:
+prompt = f"""Make sure to only consider the following set of parameters. Include additional parameters only when needed:
 parameters['dynamic_settings'] 
 parameters['OFDM']
 parameters['bs_antenna'] 
@@ -118,11 +118,11 @@ parameters['ue_antenna']['radiation_pattern'] = 'isotropic'
 parameters['enable_BS2BS'] = 1
 
 parameters['OFDM_channels'] = 1 # Frequency (OFDM) or time domain channels
-parameters['OFDM']['subcarriers'] = 512
-parameters['OFDM']['subcarriers_limit'] = 64
-parameters['OFDM']['subcarriers_sampling'] = 1
-parameters['OFDM']['bandwidth'] = 0.05
-parameters['OFDM']['RX_filter'] = 0. Now here is the scenario: {ingredients}"""
+parameters['OFDM']['subcarriers'] 
+parameters['OFDM']['subcarriers_limit']
+parameters['OFDM']['subcarriers_sampling']
+parameters['OFDM']['bandwidth'] 
+parameters['OFDM']['RX_filter'] . Now here is the scenario: {ingredients}"""
 change_label_style(label, '20px')
 
 # Send query to the chatbot

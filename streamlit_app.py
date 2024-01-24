@@ -1,7 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 # Initialize the OpenAI client with your API key
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 # Function to communicate with ChatGPT
 def chat_with_gpt(prompt):

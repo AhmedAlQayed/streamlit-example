@@ -75,10 +75,23 @@ st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True)
+def change_label_style(label, font_size='12px', font_color='black', font_family='sans-serif'):
+    html = f"""
+    <script>
+        var elems = window.parent.document.querySelectorAll('p');
+        var elem = Array.from(elems).find(x => x.innerText == '{label}');
+        elem.style.fontSize = '{font_size}';
+        elem.style.color = '{font_color}';
+        elem.style.fontFamily = '{font_family}';
+    </script>
+    """
+    st.components.v1.html(html)
 
 # User input
-ingredients = st.text_input("Enter your network/communication system scenario:")
+label = "Enter your network/communication system scenario:"
+ingredients = st.text_input(label)
 prompt = f"{ingredients}"
+change_label_style(label, '20px')
 
 # Send query to the chatbot
 if st.button("Generate Config Parameters!"):

@@ -4,7 +4,7 @@ import openai
 
 # Function to communicate with ChatGPT
 def chat_with_gpt(prompt):
-    openai.api_key = "your-api-key"
+    openai.api_key = "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"
     response = openai.Completion.create(
         engine="text-babbage-001",
         prompt=prompt,

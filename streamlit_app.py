@@ -90,7 +90,39 @@ def change_label_style(label, font_size='12px', font_color='black', font_family=
 # User input
 label = "Enter your network/communication system scenario:"
 ingredients = st.text_input(label)
-prompt = f"{ingredients}"
+prompt = f"""Make sure to only consider the following set of parameters:
+parameters['dynamic_settings'] 
+parameters['OFDM']
+parameters['bs_antenna'] 
+parameters['ue_antenna'] 
+parameters['dynamic_settings']['first_scene'] = 1
+parameters['dynamic_settings']['last_scene'] = 1
+
+parameters['num_paths'] = 5
+parameters['active_BS'] = np.array([1])
+parameters['user_row_first'] = 1
+parameters['user_row_last'] = 1
+parameters['row_subsampling'] = 1
+parameters['user_subsampling'] = 1
+
+parameters['bs_antenna']['shape'] = np.array([1, 8, 4])
+parameters['bs_antenna']['spacing'] = 0.5
+parameters['bs_antenna']['rotation'] = np.array([0, 0, 0])
+parameters['bs_antenna']['radiation_pattern'] = 'isotropic'
+
+parameters['ue_antenna']['shape'] = np.array([1, 4, 2])
+parameters['ue_antenna']['spacing'] = 0.5
+parameters['ue_antenna']['rotation'] = np.array([0, 0, 0])
+parameters['ue_antenna']['radiation_pattern'] = 'isotropic'
+
+parameters['enable_BS2BS'] = 1
+
+parameters['OFDM_channels'] = 1 # Frequency (OFDM) or time domain channels
+parameters['OFDM']['subcarriers'] = 512
+parameters['OFDM']['subcarriers_limit'] = 64
+parameters['OFDM']['subcarriers_sampling'] = 1
+parameters['OFDM']['bandwidth'] = 0.05
+parameters['OFDM']['RX_filter'] = 0. Now here is the scenario: {ingredients}"""
 change_label_style(label, '20px')
 
 # Send query to the chatbot

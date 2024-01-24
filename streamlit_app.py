@@ -8,9 +8,10 @@ def chat_with_gpt(prompt):
     # Create a chat completion
     response = client.chat.completions.create(
         messages=[
+            {"role": "system", "content":"You assist in generating DeepMIMO config parameters based on user input"},
             {"role": "user", "content": prompt}
         ],
-        model="gpt-4-1106-preview",
+        model="ft:gpt-3.5-turbo-1106:personal::8iikVOli",
     )
 
     return response.choices[0].message.content.strip()
@@ -78,8 +79,8 @@ st.markdown(
 
 st.title("AutoDeepMIMO")
 
-ingredients = st.text_input("Enter ingredients separated by commas:")
-prompt = f"Create a recipe using the following ingredients: {ingredients}. Provide a recipe name, ingredients and detailed steps. Add calories for the recipe as well"
+ingredients = st.text_input("Enter your network/communication system scenario:")
+prompt = f"{ingredients}"
 
 recipe_response = ""
 
@@ -92,10 +93,7 @@ if st.button("Generate the channel matrix!"):
     recipe_name = ""
     ingredients_and_steps = ""
     for line in lines:
-        if "recipe name" in line.lower():
-            recipe_name = line.strip()
-        else:
-            ingredients_and_steps += line.strip() + "\n"
+        ingredients_and_steps += line.strip() + "\n"
 
     # Output
     with st.container():

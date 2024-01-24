@@ -114,12 +114,6 @@ if st.button("Cook me a meal!"):
         st.markdown(f"## {recipe_name}")
         st.markdown(ingredients_and_steps)
 
-# Share on WhatsApp
-import urllib
+        # Add a box to display the entire response
+    st.text_area("Generated Recipe", recipe_response, height=300)
 
-# Inside the if condition
-if st.button("Share on WhatsApp"):
-    share_text = f"Check out this recipe I found using Recipe Maker Chatbot: {recipe_response}"
-    share_text = urllib.parse.quote(share_text)
-    st.markdown(f"<a href='https://api.whatsapp.com/send?text={share_text}' target='_blank'>Share on WhatsApp</a>",
-                unsafe_allow_html=True)

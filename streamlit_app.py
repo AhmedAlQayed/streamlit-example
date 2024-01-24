@@ -3,6 +3,8 @@ from openai import OpenAI
 # Initialize the OpenAI client with your API key
 client = OpenAI(api_key=st.secrets["openai_api_key"])
 
+
+
 # Function to communicate with ChatGPT
 def chat_with_gpt(prompt):
     # Create a chat completion
@@ -16,6 +18,15 @@ def chat_with_gpt(prompt):
 
     return response.choices[0].message.content.strip()
 
+# Display the images
+st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/6305c3a82e2d5b9d4e0b8b80d0bff725f945a145/logo.png", use_column_width=True)
+
+# Use columns to display images at the bottom left and right
+col1, col2 = st.columns(2)
+with col1:
+    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/6305c3a82e2d5b9d4e0b8b80d0bff725f945a145/O1_bird.png", use_column_width=True)
+with col2:
+    st.image("https://github.com/AhmedAlQayed/streamlit-example/blob/6305c3a82e2d5b9d4e0b8b80d0bff725f945a145/O1_topV2.png", use_column_width=True)
 
 # Streamlit app
 st.markdown(

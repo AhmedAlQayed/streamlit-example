@@ -12,7 +12,7 @@ def chat_with_gpt(prompt):
             {"role": "system", "content": "You assist in generating DeepMIMO config parameters based on user input"},
             {"role": "user", "content": prompt}
         ],
-        temperature=0.1,
+        temperature=0,
         model="ft:gpt-3.5-turbo-1106:personal::8iikVOli",
     )
     return response.choices[0].message.content.strip()
